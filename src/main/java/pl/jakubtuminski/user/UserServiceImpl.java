@@ -1,11 +1,8 @@
 package pl.jakubtuminski.user;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pl.jakubtuminski.role.Role;
 import pl.jakubtuminski.role.RoleRepository;
 
@@ -14,7 +11,6 @@ import java.util.HashSet;
 
 @Service
 public class UserServiceImpl implements UserService{
-//    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -33,14 +29,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void saveUser(User user) {
+    public void saveUser(User user, String role) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        Role userRole = roleRepository.findByName("ROLE_USER");
+        Role userRole = roleRepository.findByName(role);
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
-//        log.info(user.getPassword());
-//        log.info(user.getUsername());
-//        log.info(user.getRoles().toString());
         userRepository.save(user);
     }
 }

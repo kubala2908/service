@@ -13,8 +13,15 @@
 </head>
 <body>
 <form:form method="post" modelAttribute="user" action="/user/add">
-    User name: <form:input path="username" />
-    Password: <form:input path="password" type="password" />
+    <br>Login/username: <form:input path="username" />
+    <br>Password: <form:input path="password" type="password" />
+    <br>Email: <form:input path="email"/>
+    <br>First name: <form:input path="firstName"/>
+    <br>Last name: <form:input path="lastName"/>
+    <br><input type="radio" id="user" name="role" value="ROLE_USER">
+    <label for="user">USER</label><br>
+    <input type="radio" id="admin" name="role" value="ROLE_ADMIN">
+    <label for="admin">ADMIN</label><br>
     <input type="submit" value="Save">
 </form:form>
 </body>
