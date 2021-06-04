@@ -20,7 +20,7 @@ public class GoogleDistanceMatrixApiResponse {
         return rows;
     }
 
-    static class Rows {
+    public class Rows {
         List<Element> elements;
 
         public List<Element> getElements() {
@@ -29,7 +29,7 @@ public class GoogleDistanceMatrixApiResponse {
     }
 
 
-    class Element {
+    public class Element {
 
         Distance distance;
         Duration duration;
@@ -43,7 +43,7 @@ public class GoogleDistanceMatrixApiResponse {
         }
     }
 
-    class Distance {
+    public class Distance {
         String text;
         String value;
 

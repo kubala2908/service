@@ -29,7 +29,7 @@ public class Machine {
     private Date warrantyStartDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date warrantyEndDate;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
     private Producer producer;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

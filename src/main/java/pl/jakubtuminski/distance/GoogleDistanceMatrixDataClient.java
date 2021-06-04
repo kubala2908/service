@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class GoogleDistanceMatrixDataClient {
-    private static final String API_KEY = "KEY";
+    private static final String API_KEY = System.getProperty("api_key");
 
     private final RestTemplate restTemplate;
 

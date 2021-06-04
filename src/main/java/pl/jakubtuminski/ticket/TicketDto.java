@@ -4,53 +4,14 @@ import pl.jakubtuminski.client.Client;
 import pl.jakubtuminski.machine.Machine;
 import pl.jakubtuminski.user.User;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "ticket")
-public class Ticket {
-    @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private long id;
+public class TicketDto {
     private String description;
     private boolean warranty;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_id")
     private Client client;
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "machine_id")
     private Machine machine;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "manager_id")
     private User manager;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "technician_id")
     private User technician;
     private Long distance;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getDistance() {
-        return distance;
-    }
-
-    public void setDistance(Long distance) {
-        this.distance = distance;
-    }
 
     public String getDescription() {
         return description;
@@ -98,5 +59,13 @@ public class Ticket {
 
     public void setTechnician(User technician) {
         this.technician = technician;
+    }
+
+    public Long getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Long distance) {
+        this.distance = distance;
     }
 }
