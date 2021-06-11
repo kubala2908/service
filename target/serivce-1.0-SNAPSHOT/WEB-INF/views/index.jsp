@@ -11,11 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Spring Security - Custom UserDetailsService Example</h1>
+<h1>Field Service Management</h1>
 <h2>${message}</h2>
 
 <form action="/logout" method="post">
     <input value="Logout" type="submit">
+</form>
+<form action="/machine/list" method="get">
+    <input value="Machines List" type="submit">
 </form>
 </body>
 </html>

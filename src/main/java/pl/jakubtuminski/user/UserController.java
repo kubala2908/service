@@ -2,6 +2,7 @@ package pl.jakubtuminski.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,12 +31,14 @@ public class UserController {
         return "index";
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/add")
     public String userAddGet(Model model){
         model.addAttribute("user", new User());
         return "/user/userRegistrationForm";
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("/add")
     public String userAddPost(User user, @RequestParam String role){
         log.info(role);
