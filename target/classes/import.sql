@@ -15,3 +15,6 @@ INSERT INTO `client`(`address`, `name`, `notes`, `taxId`, `overdraft`) VALUES ('
 
 INSERT INTO `machine`(`address`, `model`, `notes`, `serialNumber`, `warrantyEndDate`, `warrantyStartDate`, `producer_id`, `client_id`) VALUES ('Lublin', 'Skipper', 'notatka skipper', '1869', '2022-03-09','2021-03-09', 1, 1);
 INSERT INTO `machine`(`address`, `model`, `notes`, `serialNumber`, `warrantyEndDate`, `warrantyStartDate`, `producer_id`, `client_id`) VALUES ('Radom', 'Rover', 'notatka rover', '1872', '2022-05-15','2021-05-15', 2, 2);
+
+INSERT INTO `ticket`(`description`, `warranty`, `client_id`, `machine_id`, `manager_id`, `technician_id`) VALUES ('description 1', true, 1, 1, 2, 2);
+INSERT INTO `ticket`(`description`, `warranty`, `client_id`, `machine_id`, `manager_id`, `technician_id`) VALUES ('description 2', false, 2, 2, 2, 2);

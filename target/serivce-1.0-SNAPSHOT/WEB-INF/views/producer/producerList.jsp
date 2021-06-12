@@ -12,6 +12,9 @@
     <title>Title</title>
 </head>
 <body>
+<form action="/user/info" method="get">
+    <input value="HOME" type="submit">
+</form>
 <table>
     <tr>
         <th>Name</th>
@@ -26,5 +29,8 @@
         </tr>
     </c:forEach>
 </table>
+<form action="/producer/add" method="get">
+    <input value="Add Machine" type="submit">
+</form>
 </body>
 </html>

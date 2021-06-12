@@ -20,5 +20,14 @@
 <form action="/machine/list" method="get">
     <input value="Machines List" type="submit">
 </form>
+<form action="/producer/list" method="get">
+    <input value="Producer List" type="submit">
+</form>
+<form action="/client/list" method="get">
+    <input value="Client List" type="submit">
+</form>
+<form action="/ticket/list" method="get">
+    <input value="Ticket List" type="submit">
+</form>
 </body>
 </html>
