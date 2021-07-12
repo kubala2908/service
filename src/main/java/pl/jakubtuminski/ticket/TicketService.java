@@ -1,6 +1,7 @@
 package pl.jakubtuminski.ticket;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.jakubtuminski.client.ClientRepository;
 import pl.jakubtuminski.distance.GoogleDistanceMatrixDataClient;
 import pl.jakubtuminski.machine.Machine;
@@ -23,6 +24,7 @@ public class TicketService {
         this.googleDistanceMatrixDataClient = googleDistanceMatrixDataClient;
     }
 
+    @Transactional
     public void saveTicket(TicketDto ticketDto, Long clientId, Long machineId, Long managerId, Long technicianId){
         Ticket ticket = new Ticket();
         String machineAddress = machineRepository.findMachineById(machineId).getAddress();
